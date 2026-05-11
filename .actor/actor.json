@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "reddit-public-tools",
+  "version": "0.1",
+  "buildTag": "latest",
+  "title": "Reddit Public Tool Server (MCP-compatible)",
+  "description": "Fetch Reddit data via tool-style invocations using public JSON endpoints (no auth). Pick one tool per run: subreddit_posts, post_details (with optional comment tree), user_profile, or search. Designed for LLM agents using MCP.",
+  "categories": ["DEVELOPER_TOOLS", "AI", "SOCIAL_MEDIA"],
+  "input": "./input_schema.json",
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 512,
+  "dockerfile": "./Dockerfile"
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Reddit Public Tool Server input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tool": {
+      "title": "Tool to invoke",
+      "type": "string",
+      "editor": "select",
+      "enum": ["subreddit_posts", "post_details", "user_profile", "search"],
+      "enumTitles": [
+        "subreddit_posts — list hot/new/top/rising posts from a subreddit",
+        "post_details — fetch a post by ID (optionally with comment tree)",
+        "user_profile — fetch a user's submitted posts and/or comments",
+        "search — Reddit search (sitewide or restricted to a subreddit)"
+      ],
+      "description": "One tool per run. The Actor charges per tool call event.",
+      "default": "subreddit_posts"
+    },
+    "args": {
+      "title": "Tool arguments",
+      "type": "object",
+      "editor": "json",
+      "description": "JSON args specific to the selected tool. See README for each tool's schema.",
+      "example": { "subreddit": "programming", "sort": "hot", "limit": 25 }
+    }
+  },
+  "required": ["tool"]
+}
